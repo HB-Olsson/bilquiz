@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "NAF Bilkjøpsrådgiver",
   description: "Finn din ideelle bil basert på dine behov og ønsker.",
+  openGraph: {
+    title: "NAF Bilkjøpsrådgiver",
+    description: "Finn din ideelle bil basert på dine behov og ønsker.",
+  },
 };
 
 export default function RootLayout({
