@@ -119,22 +119,291 @@ const questions = [
 type Svar = Record<string, string>;
 
 const biler = [
+  // --- Budsjettsegment ---
   {
-    navn: "Tesla Model Y",
-    bilde: "🔋",
-    beskrivelse: "Romslig elektrisk SUV med topp teknologi, lang rekkevidde og høy sikkerhetsvurdering.",
+    navn: "Dacia Sandero",
+    bilde: "💶",
+    beskrivelse: "Europas billigste nye bil. Enkel, pålitelig og svært billig å eie.",
     poeng: (s: Svar) => {
       let p = 0;
-      if (s.drivlinje === "elektrisk") p += 3;
-      if (s.teknologi === "høy") p += 3;
-      if (s.sikkerhet === "høy") p += 2;
-      if (s.budsjett === "høy") p += 2;
-      if (s.passasjerer === "4" || s.passasjerer === "5+") p += 2;
-      if (s.parkering === "garasje") p += 2;
-      if (s.bagasje === "stor" || s.bagasje === "middels") p += 1;
+      if (s.budsjett === "lav") p += 5;
+      if (s.prioritet === "økonomi") p += 4;
+      if (s.passasjerer === "1" || s.passasjerer === "2") p += 2;
+      if (s.drivlinje === "fossil" || s.drivlinje === "ingen") p += 1;
+      if (s.teknologi === "lav") p += 1;
       return p;
     },
   },
+  {
+    navn: "Dacia Jogger",
+    bilde: "👨‍👩‍👧",
+    beskrivelse: "Lavest pris med overraskende mye plass — opp til 7 seter.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.budsjett === "lav") p += 4;
+      if (s.prioritet === "økonomi") p += 3;
+      if (s.passasjerer === "5+") p += 4;
+      if (s.bagasje === "stor") p += 2;
+      if (s.design === "praktisk") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Dacia Duster",
+    bilde: "🏕️",
+    beskrivelse: "Rimelig SUV med solid terrengkapasitet og god bakkeklaring.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.budsjett === "lav") p += 3;
+      if (s.bruk === "terreng") p += 3;
+      if (s.prioritet === "økonomi") p += 2;
+      if (s.drivlinje === "fossil" || s.drivlinje === "ingen") p += 1;
+      if (s.tilhenger === "iblant") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Renault Clio",
+    bilde: "🚗",
+    beskrivelse: "Fransk småbil med sjarm — komfortabel, stilren og lettkjørt i by.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.bruk === "by") p += 3;
+      if (s.budsjett === "lav") p += 3;
+      if (s.passasjerer === "1" || s.passasjerer === "2") p += 2;
+      if (s.kjørelengde === "lav") p += 2;
+      if (s.design === "elegant") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Hyundai i20",
+    bilde: "🚙",
+    beskrivelse: "Moderne småbil med god utrustning til en fornuftig pris.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.budsjett === "lav") p += 3;
+      if (s.bruk === "by") p += 2;
+      if (s.passasjerer === "1" || s.passasjerer === "2") p += 2;
+      if (s.teknologi === "middels") p += 2;
+      if (s.prioritet === "økonomi") p += 2;
+      return p;
+    },
+  },
+  {
+    navn: "Volkswagen Polo",
+    bilde: "🐢",
+    beskrivelse: "Tysk kvalitet i kompakt format. Stødig, trygg og godt utstyrt.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.bruk === "by") p += 2;
+      if (s.budsjett === "lav") p += 2;
+      if (s.sikkerhet === "middels" || s.sikkerhet === "høy") p += 2;
+      if (s.passasjerer === "1" || s.passasjerer === "2") p += 2;
+      if (s.teknologi === "middels") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Skoda Fabia",
+    bilde: "🧩",
+    beskrivelse: "Overraskende romslig kompaktbil med tsjekk kvalitet og god pris.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.budsjett === "lav") p += 3;
+      if (s.bagasje === "middels") p += 2;
+      if (s.prioritet === "økonomi") p += 2;
+      if (s.bruk === "by" || s.bruk === "variert") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Toyota Yaris Hybrid",
+    bilde: "🌱",
+    beskrivelse: "Kompakt og svært billig i drift. Perfekt for bykjøring med hybridmotor.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.bruk === "by") p += 3;
+      if (s.kjørelengde === "lav") p += 2;
+      if (s.budsjett === "lav") p += 3;
+      if (s.passasjerer === "1" || s.passasjerer === "2") p += 2;
+      if (s.drivlinje === "hybrid" || s.drivlinje === "ingen") p += 2;
+      if (s.prioritet === "økonomi" || s.prioritet === "miljø") p += 1;
+      return p;
+    },
+  },
+
+  // --- Mellomklasse ---
+  {
+    navn: "Volkswagen Golf",
+    bilde: "🏌️",
+    beskrivelse: "Tidløs allrounder — god på alt, svak på ingenting.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.bruk === "variert") p += 3;
+      if (s.budsjett === "middels") p += 2;
+      if (s.passasjerer === "2" || s.passasjerer === "4") p += 2;
+      if (s.teknologi === "middels") p += 2;
+      if (s.sikkerhet === "middels") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Toyota Corolla",
+    bilde: "🚘",
+    beskrivelse: "Verdens mest solgte bil. Pålitelig, komfortabel og rimelig å eie.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "hybrid" || s.drivlinje === "ingen") p += 2;
+      if (s.prioritet === "økonomi") p += 2;
+      if (s.bruk === "variert" || s.bruk === "familie") p += 2;
+      if (s.budsjett === "middels") p += 2;
+      if (s.kjørelengde === "høy") p += 2;
+      return p;
+    },
+  },
+  {
+    navn: "Mazda 3",
+    bilde: "🎨",
+    beskrivelse: "Prisbelønnet design, førsteklasses interiør og presis kjøreopplevelse.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.design === "elegant" || s.design === "sporty") p += 3;
+      if (s.prioritet === "ytelse") p += 2;
+      if (s.budsjett === "middels") p += 2;
+      if (s.passasjerer === "2" || s.passasjerer === "4") p += 1;
+      if (s.teknologi === "middels") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Skoda Octavia",
+    bilde: "🧳",
+    beskrivelse: "Mye bil for pengene — romslig, praktisk og pålitelig for hele familien.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.prioritet === "økonomi") p += 3;
+      if (s.passasjerer === "4" || s.passasjerer === "5+") p += 2;
+      if (s.bagasje === "stor" || s.bagasje === "middels") p += 2;
+      if (s.budsjett === "lav" || s.budsjett === "middels") p += 2;
+      if (s.design === "praktisk") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Hyundai Tucson",
+    bilde: "🌄",
+    beskrivelse: "Moderne SUV med slående design, god plass og hybrid som standard.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.bruk === "familie" || s.bruk === "variert") p += 2;
+      if (s.budsjett === "middels") p += 2;
+      if (s.drivlinje === "hybrid" || s.drivlinje === "ingen") p += 2;
+      if (s.bagasje === "stor") p += 2;
+      if (s.design === "sporty") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Kia Sportage",
+    bilde: "🦁",
+    beskrivelse: "Robust og godt utstyrt SUV med lang garanti og god verdi.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.budsjett === "middels") p += 2;
+      if (s.bruk === "familie" || s.bruk === "variert") p += 2;
+      if (s.sikkerhet === "høy") p += 2;
+      if (s.bagasje === "middels" || s.bagasje === "stor") p += 2;
+      if (s.teknologi === "middels") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Nissan Qashqai",
+    bilde: "🗺️",
+    beskrivelse: "SUV-en som startet segmentet. Komfortabel, romslig og praktisk.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.bruk === "familie" || s.bruk === "variert") p += 2;
+      if (s.budsjett === "middels") p += 2;
+      if (s.drivlinje === "hybrid" || s.drivlinje === "ingen") p += 2;
+      if (s.prioritet === "komfort") p += 2;
+      if (s.passasjerer === "4") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Peugeot 3008",
+    bilde: "🦁",
+    beskrivelse: "Franske luksusfølelser til mellomklassepris — nyskapende interiør.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.design === "elegant") p += 3;
+      if (s.prioritet === "komfort") p += 2;
+      if (s.budsjett === "middels") p += 2;
+      if (s.teknologi === "høy") p += 2;
+      if (s.bruk === "familie") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Ford Kuga Hybrid",
+    bilde: "🦅",
+    beskrivelse: "Allsidig hybrid-SUV med god plass og lavt forbruk på langturer.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "hybrid") p += 3;
+      if (s.bruk === "familie" || s.bruk === "variert") p += 2;
+      if (s.kjørelengde === "høy") p += 2;
+      if (s.budsjett === "middels") p += 2;
+      if (s.bagasje === "middels") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Mazda CX-5",
+    bilde: "🌊",
+    beskrivelse: "Premiumfølelse uten premiumprislapp — romslig, stilren og stødig.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.design === "elegant") p += 2;
+      if (s.prioritet === "komfort") p += 2;
+      if (s.budsjett === "middels") p += 2;
+      if (s.bruk === "familie") p += 2;
+      if (s.bagasje === "middels" || s.bagasje === "stor") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Toyota RAV4 Hybrid",
+    bilde: "🏔️",
+    beskrivelse: "Robust hybrid-SUV med firehjulsdrift. Takler by, landevei og lettere terreng.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "hybrid" || s.drivlinje === "ingen") p += 2;
+      if (s.bruk === "terreng" || s.bruk === "variert") p += 3;
+      if (s.tilhenger === "ja" || s.tilhenger === "iblant") p += 2;
+      if (s.bagasje === "stor") p += 2;
+      if (s.budsjett === "middels" || s.budsjett === "høy") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Kia Niro EV",
+    bilde: "🍃",
+    beskrivelse: "Kompakt elektrisk SUV med lang rekkevidde og praktisk design.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.prioritet === "miljø") p += 3;
+      if (s.budsjett === "middels") p += 2;
+      if (s.bruk === "by" || s.bruk === "variert") p += 2;
+      if (s.parkering === "garasje") p += 1;
+      return p;
+    },
+  },
+
+  // --- Elektrisk mellomklasse ---
   {
     navn: "Volkswagen ID.3",
     bilde: "⚡",
@@ -146,36 +415,120 @@ const biler = [
       if (s.budsjett === "middels") p += 2;
       if (s.parkering === "garasje") p += 2;
       if (s.passasjerer !== "5+") p += 1;
-      if (s.teknologi === "høy" || s.teknologi === "middels") p += 1;
       return p;
     },
   },
   {
-    navn: "Toyota RAV4 Hybrid",
-    bilde: "🏔️",
-    beskrivelse: "Robust hybrid-SUV med firehjulsdrift. Takler by, landevei og terreng.",
+    navn: "Volkswagen ID.4",
+    bilde: "🔌",
+    beskrivelse: "Elektrisk familieSUV med lang rekkevidde og romslig interiør.",
     poeng: (s: Svar) => {
       let p = 0;
-      if (s.drivlinje === "hybrid" || s.drivlinje === "ingen") p += 2;
-      if (s.bruk === "terreng" || s.bruk === "variert") p += 3;
-      if (s.tilhenger === "ja" || s.tilhenger === "iblant") p += 2;
-      if (s.bagasje === "stor") p += 2;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.bruk === "familie") p += 2;
+      if (s.passasjerer === "4" || s.passasjerer === "5+") p += 2;
+      if (s.budsjett === "middels" || s.budsjett === "høy") p += 2;
+      if (s.parkering === "garasje") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Hyundai Ioniq 6",
+    bilde: "🚀",
+    beskrivelse: "Aerodynamisk elektrisk sedan med rekordlang rekkevidde og lynrask lading.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.kjørelengde === "høy") p += 3;
+      if (s.design === "sporty") p += 2;
+      if (s.teknologi === "høy") p += 2;
       if (s.budsjett === "middels" || s.budsjett === "høy") p += 1;
-      if (s.sikkerhet === "høy") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Kia EV6",
+    bilde: "🌀",
+    beskrivelse: "Elektrisk crossover med spektakulært design og lynrask lading.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.design === "sporty") p += 3;
+      if (s.prioritet === "ytelse") p += 2;
+      if (s.teknologi === "høy") p += 2;
+      if (s.budsjett === "middels" || s.budsjett === "høy") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Polestar 2",
+    bilde: "🌿",
+    beskrivelse: "Stilren elektrisk sedan med fokus på bærekraft, design og kjøreglede.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "elektrisk") p += 2;
+      if (s.prioritet === "miljø") p += 3;
+      if (s.design === "elegant") p += 2;
+      if (s.teknologi === "høy") p += 2;
+      if (s.budsjett === "middels" || s.budsjett === "høy") p += 2;
+      return p;
+    },
+  },
+
+  // --- Premium ---
+  {
+    navn: "Tesla Model 3",
+    bilde: "⚡",
+    beskrivelse: "Elektrisk sedan med enestående teknologi og ytelse. Ingen kompromisser.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.teknologi === "høy") p += 3;
+      if (s.prioritet === "ytelse") p += 2;
+      if (s.budsjett === "middels" || s.budsjett === "høy") p += 2;
+      if (s.parkering === "garasje") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Tesla Model Y",
+    bilde: "🔋",
+    beskrivelse: "Romslig elektrisk SUV med topp teknologi, lang rekkevidde og høy sikkerhetsvurdering.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.teknologi === "høy") p += 3;
+      if (s.sikkerhet === "høy") p += 2;
+      if (s.budsjett === "høy") p += 2;
+      if (s.passasjerer === "4" || s.passasjerer === "5+") p += 2;
+      if (s.parkering === "garasje") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Volvo XC40 Recharge",
+    bilde: "🛡️",
+    beskrivelse: "Kompakt elektrisk SUV fra Volvo — skandinavisk design møter nullutslipp.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.sikkerhet === "høy") p += 3;
+      if (s.design === "elegant") p += 2;
+      if (s.budsjett === "høy") p += 2;
+      if (s.bruk === "by" || s.bruk === "variert") p += 1;
       return p;
     },
   },
   {
     navn: "Volvo XC60",
-    bilde: "🛡️",
-    beskrivelse: "Skandinavisk komfort og markedets beste sikkerhet. Ideell for familier på langturer.",
+    bilde: "🌲",
+    beskrivelse: "Markedets beste sikkerhet, nordisk komfort og plug-in hybrid som standard.",
     poeng: (s: Svar) => {
       let p = 0;
       if (s.sikkerhet === "høy") p += 3;
       if (s.prioritet === "komfort") p += 3;
       if (s.bruk === "familie") p += 2;
       if (s.budsjett !== "lav") p += 2;
-      if (s.passasjerer === "4" || s.passasjerer === "5+") p += 1;
       if (s.design === "elegant") p += 1;
       return p;
     },
@@ -195,62 +548,135 @@ const biler = [
     },
   },
   {
-    navn: "Skoda Octavia",
-    bilde: "👨‍👩‍👧",
-    beskrivelse: "Mye bil for pengene — romslig, praktisk og pålitelig for hele familien.",
+    navn: "BMW iX3",
+    bilde: "⚡",
+    beskrivelse: "Elektrisk BMW SUV med kjent kjøredynamikk og premium interiør.",
     poeng: (s: Svar) => {
       let p = 0;
-      if (s.prioritet === "økonomi") p += 3;
-      if (s.passasjerer === "4" || s.passasjerer === "5+") p += 2;
-      if (s.bagasje === "stor" || s.bagasje === "middels") p += 2;
-      if (s.budsjett === "lav" || s.budsjett === "middels") p += 2;
-      if (s.design === "praktisk") p += 1;
-      return p;
-    },
-  },
-  {
-    navn: "Toyota Yaris Hybrid",
-    bilde: "🚗",
-    beskrivelse: "Kompakt, pålitelig og svært billig i drift. Perfekt for bykjøring og korte turer.",
-    poeng: (s: Svar) => {
-      let p = 0;
-      if (s.bruk === "by") p += 3;
-      if (s.kjørelengde === "lav") p += 2;
-      if (s.budsjett === "lav") p += 3;
-      if (s.passasjerer === "1" || s.passasjerer === "2") p += 2;
-      if (s.drivlinje === "hybrid" || s.drivlinje === "ingen") p += 1;
-      if (s.prioritet === "økonomi" || s.prioritet === "miljø") p += 1;
-      return p;
-    },
-  },
-  {
-    navn: "Dacia Jogger",
-    bilde: "💶",
-    beskrivelse: "Lavest pris på markedet med overraskende mye plass. Opp til 7 seter.",
-    poeng: (s: Svar) => {
-      let p = 0;
-      if (s.budsjett === "lav") p += 4;
-      if (s.prioritet === "økonomi") p += 3;
-      if (s.passasjerer === "5+") p += 3;
-      if (s.design === "praktisk") p += 1;
-      return p;
-    },
-  },
-  {
-    navn: "Polestar 2",
-    bilde: "🌿",
-    beskrivelse: "Stilren elektrisk sedan med fokus på bærekraft, design og kjøreglede.",
-    poeng: (s: Svar) => {
-      let p = 0;
-      if (s.drivlinje === "elektrisk") p += 2;
-      if (s.prioritet === "miljø") p += 3;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.prioritet === "ytelse") p += 3;
       if (s.design === "sporty" || s.design === "elegant") p += 2;
+      if (s.budsjett === "høy") p += 2;
+      if (s.teknologi === "høy") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Audi A4",
+    bilde: "💎",
+    beskrivelse: "Tysk presisjon og luksus i mellomklassen — diskret, rask og godt utstyrt.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.design === "elegant") p += 3;
+      if (s.prioritet === "ytelse" || s.prioritet === "komfort") p += 2;
+      if (s.budsjett === "høy") p += 3;
+      if (s.teknologi === "høy") p += 1;
+      if (s.kjørelengde === "høy") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Audi Q4 e-tron",
+    bilde: "🔷",
+    beskrivelse: "Elektrisk SUV med Audis kjente kvalitetsfølelse og romslig interiør.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.design === "elegant") p += 2;
+      if (s.budsjett === "høy") p += 3;
+      if (s.prioritet === "komfort") p += 2;
+      if (s.teknologi === "høy") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Mercedes C-klasse",
+    bilde: "⭐",
+    beskrivelse: "Luksuriøs sedan med toppmoderne teknologi og uovertruffen komfort.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.prioritet === "komfort") p += 3;
+      if (s.design === "elegant") p += 3;
+      if (s.budsjett === "høy") p += 3;
       if (s.teknologi === "høy") p += 2;
-      if (s.budsjett === "middels" || s.budsjett === "høy") p += 2;
+      if (s.sikkerhet === "høy") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Mercedes EQA",
+    bilde: "🌟",
+    beskrivelse: "Kompakt elektrisk Mercedes med luksusinteriør og trygg rekkevidde.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.drivlinje === "elektrisk") p += 3;
+      if (s.design === "elegant") p += 2;
+      if (s.budsjett === "høy") p += 2;
+      if (s.prioritet === "komfort") p += 2;
       if (s.parkering === "garasje") p += 1;
       return p;
     },
   },
+
+  // --- Stor / luksus ---
+  {
+    navn: "Volvo XC90",
+    bilde: "👑",
+    beskrivelse: "Flaggskipet fra Volvo — 7 seter, topp sikkerhet og tidløs skandinavisk luksus.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.passasjerer === "5+") p += 4;
+      if (s.sikkerhet === "høy") p += 3;
+      if (s.prioritet === "komfort") p += 2;
+      if (s.budsjett === "høy") p += 3;
+      if (s.design === "elegant") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "BMW X5",
+    bilde: "🦈",
+    beskrivelse: "Stor premium SUV med kraftige motorer og luksus i alle detaljer.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.budsjett === "høy") p += 3;
+      if (s.prioritet === "ytelse") p += 3;
+      if (s.passasjerer === "5+") p += 2;
+      if (s.tilhenger === "ja" || s.tilhenger === "iblant") p += 2;
+      if (s.design === "sporty" || s.design === "elegant") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Audi Q7",
+    bilde: "🔶",
+    beskrivelse: "Stor, romslig luksus-SUV med 7 seter og imponerende utstyrsnivå.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.passasjerer === "5+") p += 4;
+      if (s.budsjett === "høy") p += 3;
+      if (s.design === "elegant") p += 2;
+      if (s.prioritet === "komfort") p += 2;
+      if (s.bagasje === "stor") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Mercedes GLE",
+    bilde: "🏛️",
+    beskrivelse: "Overlegen komfort og teknologi i en stor, sofistikert SUV.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.budsjett === "høy") p += 3;
+      if (s.prioritet === "komfort") p += 3;
+      if (s.design === "elegant") p += 2;
+      if (s.passasjerer === "5+") p += 2;
+      if (s.teknologi === "høy") p += 2;
+      return p;
+    },
+  },
+
+  // --- Terreng og arbeid ---
   {
     navn: "Ford Ranger",
     bilde: "🛻",
@@ -261,6 +687,48 @@ const biler = [
       if (s.bruk === "terreng") p += 3;
       if (s.bagasje === "stor") p += 2;
       if (s.drivlinje === "fossil" || s.drivlinje === "ingen") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Toyota Hilux",
+    bilde: "🪨",
+    beskrivelse: "Verdens mest pålitelige pickup. Uslitelig i alle terreng og forhold.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.bruk === "terreng") p += 4;
+      if (s.tilhenger === "ja") p += 3;
+      if (s.drivlinje === "fossil" || s.drivlinje === "ingen") p += 2;
+      if (s.bagasje === "stor") p += 2;
+      if (s.prioritet === "økonomi") p -= 1;
+      return p;
+    },
+  },
+  {
+    navn: "Volkswagen Transporter",
+    bilde: "🚐",
+    beskrivelse: "Klassisk varebil med mye plass, stor nyttelast og god komfort for sjåføren.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.bagasje === "stor") p += 4;
+      if (s.passasjerer === "5+") p += 3;
+      if (s.tilhenger === "ja") p += 2;
+      if (s.drivlinje === "fossil" || s.drivlinje === "ingen") p += 1;
+      if (s.prioritet === "økonomi") p += 1;
+      return p;
+    },
+  },
+  {
+    navn: "Mitsubishi L200",
+    bilde: "🏗️",
+    beskrivelse: "Japansk pickup med imponerende terrengegenskaper og høy trekkevne.",
+    poeng: (s: Svar) => {
+      let p = 0;
+      if (s.bruk === "terreng") p += 3;
+      if (s.tilhenger === "ja") p += 3;
+      if (s.drivlinje === "fossil" || s.drivlinje === "ingen") p += 2;
+      if (s.budsjett === "middels") p += 1;
+      if (s.bagasje === "stor") p += 1;
       return p;
     },
   },
