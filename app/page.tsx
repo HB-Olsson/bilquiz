@@ -807,25 +807,25 @@ export default function Home() {
   if (ferdig) {
     const anbefaling = finnAnbefaling(svar);
     return (
-      <main className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-        <div className="bg-white rounded-2xl shadow-md p-10 max-w-md w-full text-center">
-          <div className="text-6xl mb-4">{anbefaling.bilde}</div>
-          <p className="text-sm text-blue-600 font-semibold uppercase tracking-wide mb-1">
-            Vår anbefaling til deg
+      <main className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
+        <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-10 max-w-md w-full text-center">
+          <div className="text-5xl mb-6">{anbefaling.bilde}</div>
+          <p className="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">
+            Vår anbefaling
           </p>
-          <h1 className="text-3xl font-bold text-gray-900 mb-3">{anbefaling.navn}</h1>
-          <p className="text-gray-500 mb-8">{anbefaling.beskrivelse}</p>
+          <h1 className="text-3xl font-bold text-slate-900 mb-3">{anbefaling.navn}</h1>
+          <p className="text-slate-500 leading-relaxed mb-8">{anbefaling.beskrivelse}</p>
           <a
             href={anbefaling.finn}
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition w-full text-center mb-3"
+            className="block bg-slate-900 text-white px-6 py-4 rounded-2xl font-semibold hover:bg-slate-700 transition-colors w-full text-center mb-3 cursor-pointer"
           >
             Se annonser på Finn.no →
           </a>
           <button
             onClick={startPåNytt}
-            className="w-full border border-gray-200 text-gray-600 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition"
+            className="w-full text-slate-400 px-6 py-3 rounded-2xl font-medium hover:text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
           >
             Ta quizen på nytt
           </button>
@@ -838,27 +838,27 @@ export default function Home() {
   const fremgang = (steg / questions.length) * 100;
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <div className="bg-white rounded-2xl shadow-md p-10 max-w-md w-full">
-        <div className="mb-6">
-          <div className="flex justify-between text-xs text-gray-400 mb-1">
-            <span>Spørsmål {steg + 1} av {questions.length}</span>
+    <main className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
+      <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-10 max-w-md w-full">
+        <div className="mb-8">
+          <div className="flex justify-between text-xs text-slate-400 mb-2">
+            <span>{steg + 1} av {questions.length}</span>
             <span>{Math.round(fremgang)}%</span>
           </div>
-          <div className="w-full bg-gray-100 rounded-full h-2">
+          <div className="w-full bg-slate-100 rounded-full h-1.5">
             <div
-              className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+              className="bg-slate-900 h-1.5 rounded-full transition-all duration-500"
               style={{ width: `${fremgang}%` }}
             />
           </div>
         </div>
-        <h2 className="text-xl font-bold text-gray-900 mb-6">{q.spørsmål}</h2>
-        <div className="flex flex-col gap-3">
+        <h2 className="text-xl font-bold text-slate-900 mb-6 leading-snug">{q.spørsmål}</h2>
+        <div className="flex flex-col gap-2">
           {q.valg.map((v) => (
             <button
               key={v.verdi}
               onClick={() => velg(v.verdi)}
-              className="text-left border border-gray-200 rounded-xl px-5 py-4 font-medium text-gray-700 hover:border-blue-500 hover:bg-blue-50 transition"
+              className="text-left border border-slate-200 rounded-2xl px-5 py-4 font-medium text-slate-700 hover:border-slate-900 hover:bg-slate-50 transition-colors cursor-pointer"
             >
               {v.tekst}
             </button>
