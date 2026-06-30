@@ -123,7 +123,9 @@ const biler = [
   {
     navn: "Dacia Sandero",
     bilde: "💶",
+    finn: "https://www.finn.no/car/used/search.html?q=Dacia+Sandero",
     beskrivelse: "Europas billigste nye bil. Enkel, pålitelig og svært billig å eie.",
+
     poeng: (s: Svar) => {
       let p = 0;
       if (s.budsjett === "lav") p += 5;
@@ -137,6 +139,7 @@ const biler = [
   {
     navn: "Dacia Jogger",
     bilde: "👨‍👩‍👧",
+    finn: "https://www.finn.no/car/used/search.html?q=Dacia+Jogger",
     beskrivelse: "Lavest pris med overraskende mye plass — opp til 7 seter.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -151,6 +154,7 @@ const biler = [
   {
     navn: "Dacia Duster",
     bilde: "🏕️",
+    finn: "https://www.finn.no/car/used/search.html?q=Dacia+Duster",
     beskrivelse: "Rimelig SUV med solid terrengkapasitet og god bakkeklaring.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -165,6 +169,7 @@ const biler = [
   {
     navn: "Renault Clio",
     bilde: "🚗",
+    finn: "https://www.finn.no/car/used/search.html?q=Renault+Clio",
     beskrivelse: "Fransk småbil med sjarm — komfortabel, stilren og lettkjørt i by.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -179,6 +184,7 @@ const biler = [
   {
     navn: "Hyundai i20",
     bilde: "🚙",
+    finn: "https://www.finn.no/car/used/search.html?q=Hyundai+i20",
     beskrivelse: "Moderne småbil med god utrustning til en fornuftig pris.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -193,6 +199,7 @@ const biler = [
   {
     navn: "Volkswagen Polo",
     bilde: "🐢",
+    finn: "https://www.finn.no/car/used/search.html?q=Volkswagen+Polo",
     beskrivelse: "Tysk kvalitet i kompakt format. Stødig, trygg og godt utstyrt.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -207,6 +214,7 @@ const biler = [
   {
     navn: "Skoda Fabia",
     bilde: "🧩",
+    finn: "https://www.finn.no/car/used/search.html?q=Skoda+Fabia",
     beskrivelse: "Overraskende romslig kompaktbil med tsjekk kvalitet og god pris.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -220,6 +228,7 @@ const biler = [
   {
     navn: "Toyota Yaris Hybrid",
     bilde: "🌱",
+    finn: "https://www.finn.no/car/used/search.html?q=Toyota+Yaris",
     beskrivelse: "Kompakt og svært billig i drift. Perfekt for bykjøring med hybridmotor.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -237,6 +246,7 @@ const biler = [
   {
     navn: "Volkswagen Golf",
     bilde: "🏌️",
+    finn: "https://www.finn.no/car/used/search.html?q=Volkswagen+Golf",
     beskrivelse: "Tidløs allrounder — god på alt, svak på ingenting.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -251,6 +261,7 @@ const biler = [
   {
     navn: "Toyota Corolla",
     bilde: "🚘",
+    finn: "https://www.finn.no/car/used/search.html?q=Toyota+Corolla",
     beskrivelse: "Verdens mest solgte bil. Pålitelig, komfortabel og rimelig å eie.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -265,6 +276,7 @@ const biler = [
   {
     navn: "Mazda 3",
     bilde: "🎨",
+    finn: "https://www.finn.no/car/used/search.html?q=Mazda+3",
     beskrivelse: "Prisbelønnet design, førsteklasses interiør og presis kjøreopplevelse.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -279,6 +291,7 @@ const biler = [
   {
     navn: "Skoda Octavia",
     bilde: "🧳",
+    finn: "https://www.finn.no/car/used/search.html?q=Skoda+Octavia",
     beskrivelse: "Mye bil for pengene — romslig, praktisk og pålitelig for hele familien.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -293,6 +306,7 @@ const biler = [
   {
     navn: "Hyundai Tucson",
     bilde: "🌄",
+    finn: "https://www.finn.no/car/used/search.html?q=Hyundai+Tucson",
     beskrivelse: "Moderne SUV med slående design, god plass og hybrid som standard.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -307,6 +321,7 @@ const biler = [
   {
     navn: "Kia Sportage",
     bilde: "🦁",
+    finn: "https://www.finn.no/car/used/search.html?q=Kia+Sportage",
     beskrivelse: "Robust og godt utstyrt SUV med lang garanti og god verdi.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -321,6 +336,7 @@ const biler = [
   {
     navn: "Nissan Qashqai",
     bilde: "🗺️",
+    finn: "https://www.finn.no/car/used/search.html?q=Nissan+Qashqai",
     beskrivelse: "SUV-en som startet segmentet. Komfortabel, romslig og praktisk.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -335,6 +351,7 @@ const biler = [
   {
     navn: "Peugeot 3008",
     bilde: "🦁",
+    finn: "https://www.finn.no/car/used/search.html?q=Peugeot+3008",
     beskrivelse: "Franske luksusfølelser til mellomklassepris — nyskapende interiør.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -349,6 +366,7 @@ const biler = [
   {
     navn: "Ford Kuga Hybrid",
     bilde: "🦅",
+    finn: "https://www.finn.no/car/used/search.html?q=Ford+Kuga",
     beskrivelse: "Allsidig hybrid-SUV med god plass og lavt forbruk på langturer.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -363,6 +381,7 @@ const biler = [
   {
     navn: "Mazda CX-5",
     bilde: "🌊",
+    finn: "https://www.finn.no/car/used/search.html?q=Mazda+CX-5",
     beskrivelse: "Premiumfølelse uten premiumprislapp — romslig, stilren og stødig.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -377,6 +396,7 @@ const biler = [
   {
     navn: "Toyota RAV4 Hybrid",
     bilde: "🏔️",
+    finn: "https://www.finn.no/car/used/search.html?q=Toyota+RAV4",
     beskrivelse: "Robust hybrid-SUV med firehjulsdrift. Takler by, landevei og lettere terreng.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -391,6 +411,7 @@ const biler = [
   {
     navn: "Kia Niro EV",
     bilde: "🍃",
+    finn: "https://www.finn.no/car/used/search.html?q=Kia+Niro",
     beskrivelse: "Kompakt elektrisk SUV med lang rekkevidde og praktisk design.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -407,6 +428,7 @@ const biler = [
   {
     navn: "Volkswagen ID.3",
     bilde: "⚡",
+    finn: "https://www.finn.no/car/used/search.html?q=Volkswagen+ID.3",
     beskrivelse: "Elektrisk kompaktbil med god rekkevidde, lavt forbruk og moderne interiør.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -421,6 +443,7 @@ const biler = [
   {
     navn: "Volkswagen ID.4",
     bilde: "🔌",
+    finn: "https://www.finn.no/car/used/search.html?q=Volkswagen+ID.4",
     beskrivelse: "Elektrisk familieSUV med lang rekkevidde og romslig interiør.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -435,6 +458,7 @@ const biler = [
   {
     navn: "Hyundai Ioniq 6",
     bilde: "🚀",
+    finn: "https://www.finn.no/car/used/search.html?q=Hyundai+Ioniq+6",
     beskrivelse: "Aerodynamisk elektrisk sedan med rekordlang rekkevidde og lynrask lading.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -449,6 +473,7 @@ const biler = [
   {
     navn: "Kia EV6",
     bilde: "🌀",
+    finn: "https://www.finn.no/car/used/search.html?q=Kia+EV6",
     beskrivelse: "Elektrisk crossover med spektakulært design og lynrask lading.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -463,6 +488,7 @@ const biler = [
   {
     navn: "Polestar 2",
     bilde: "🌿",
+    finn: "https://www.finn.no/car/used/search.html?q=Polestar+2",
     beskrivelse: "Stilren elektrisk sedan med fokus på bærekraft, design og kjøreglede.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -479,6 +505,7 @@ const biler = [
   {
     navn: "Tesla Model 3",
     bilde: "⚡",
+    finn: "https://www.finn.no/car/used/search.html?q=Tesla+Model+3",
     beskrivelse: "Elektrisk sedan med enestående teknologi og ytelse. Ingen kompromisser.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -493,6 +520,7 @@ const biler = [
   {
     navn: "Tesla Model Y",
     bilde: "🔋",
+    finn: "https://www.finn.no/car/used/search.html?q=Tesla+Model+Y",
     beskrivelse: "Romslig elektrisk SUV med topp teknologi, lang rekkevidde og høy sikkerhetsvurdering.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -508,6 +536,7 @@ const biler = [
   {
     navn: "Volvo XC40 Recharge",
     bilde: "🛡️",
+    finn: "https://www.finn.no/car/used/search.html?q=Volvo+XC40",
     beskrivelse: "Kompakt elektrisk SUV fra Volvo — skandinavisk design møter nullutslipp.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -522,6 +551,7 @@ const biler = [
   {
     navn: "Volvo XC60",
     bilde: "🌲",
+    finn: "https://www.finn.no/car/used/search.html?q=Volvo+XC60",
     beskrivelse: "Markedets beste sikkerhet, nordisk komfort og plug-in hybrid som standard.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -536,6 +566,7 @@ const biler = [
   {
     navn: "BMW 3-serie",
     bilde: "🏎️",
+    finn: "https://www.finn.no/car/used/search.html?q=BMW+3-serie",
     beskrivelse: "Kjøreglede i toppklasse med elegant design og kraftig motor.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -550,6 +581,7 @@ const biler = [
   {
     navn: "BMW iX3",
     bilde: "⚡",
+    finn: "https://www.finn.no/car/used/search.html?q=BMW+iX3",
     beskrivelse: "Elektrisk BMW SUV med kjent kjøredynamikk og premium interiør.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -564,6 +596,7 @@ const biler = [
   {
     navn: "Audi A4",
     bilde: "💎",
+    finn: "https://www.finn.no/car/used/search.html?q=Audi+A4",
     beskrivelse: "Tysk presisjon og luksus i mellomklassen — diskret, rask og godt utstyrt.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -578,6 +611,7 @@ const biler = [
   {
     navn: "Audi Q4 e-tron",
     bilde: "🔷",
+    finn: "https://www.finn.no/car/used/search.html?q=Audi+Q4",
     beskrivelse: "Elektrisk SUV med Audis kjente kvalitetsfølelse og romslig interiør.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -592,6 +626,7 @@ const biler = [
   {
     navn: "Mercedes C-klasse",
     bilde: "⭐",
+    finn: "https://www.finn.no/car/used/search.html?q=Mercedes+C-klasse",
     beskrivelse: "Luksuriøs sedan med toppmoderne teknologi og uovertruffen komfort.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -606,6 +641,7 @@ const biler = [
   {
     navn: "Mercedes EQA",
     bilde: "🌟",
+    finn: "https://www.finn.no/car/used/search.html?q=Mercedes+EQA",
     beskrivelse: "Kompakt elektrisk Mercedes med luksusinteriør og trygg rekkevidde.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -622,6 +658,7 @@ const biler = [
   {
     navn: "Volvo XC90",
     bilde: "👑",
+    finn: "https://www.finn.no/car/used/search.html?q=Volvo+XC90",
     beskrivelse: "Flaggskipet fra Volvo — 7 seter, topp sikkerhet og tidløs skandinavisk luksus.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -636,6 +673,7 @@ const biler = [
   {
     navn: "BMW X5",
     bilde: "🦈",
+    finn: "https://www.finn.no/car/used/search.html?q=BMW+X5",
     beskrivelse: "Stor premium SUV med kraftige motorer og luksus i alle detaljer.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -650,6 +688,7 @@ const biler = [
   {
     navn: "Audi Q7",
     bilde: "🔶",
+    finn: "https://www.finn.no/car/used/search.html?q=Audi+Q7",
     beskrivelse: "Stor, romslig luksus-SUV med 7 seter og imponerende utstyrsnivå.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -664,6 +703,7 @@ const biler = [
   {
     navn: "Mercedes GLE",
     bilde: "🏛️",
+    finn: "https://www.finn.no/car/used/search.html?q=Mercedes+GLE",
     beskrivelse: "Overlegen komfort og teknologi i en stor, sofistikert SUV.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -680,6 +720,7 @@ const biler = [
   {
     navn: "Ford Ranger",
     bilde: "🛻",
+    finn: "https://www.finn.no/car/used/search.html?q=Ford+Ranger",
     beskrivelse: "Kraftig pickup med høy trekkkapasitet. Bygget for hardt arbeid og terreng.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -693,6 +734,7 @@ const biler = [
   {
     navn: "Toyota Hilux",
     bilde: "🪨",
+    finn: "https://www.finn.no/car/used/search.html?q=Toyota+Hilux",
     beskrivelse: "Verdens mest pålitelige pickup. Uslitelig i alle terreng og forhold.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -707,6 +749,7 @@ const biler = [
   {
     navn: "Volkswagen Transporter",
     bilde: "🚐",
+    finn: "https://www.finn.no/car/used/search.html?q=Volkswagen+Transporter",
     beskrivelse: "Klassisk varebil med mye plass, stor nyttelast og god komfort for sjåføren.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -721,6 +764,7 @@ const biler = [
   {
     navn: "Mitsubishi L200",
     bilde: "🏗️",
+    finn: "https://www.finn.no/car/used/search.html?q=Mitsubishi+L200",
     beskrivelse: "Japansk pickup med imponerende terrengegenskaper og høy trekkevne.",
     poeng: (s: Svar) => {
       let p = 0;
@@ -771,9 +815,17 @@ export default function Home() {
           </p>
           <h1 className="text-3xl font-bold text-gray-900 mb-3">{anbefaling.navn}</h1>
           <p className="text-gray-500 mb-8">{anbefaling.beskrivelse}</p>
+          <a
+            href={anbefaling.finn}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition w-full text-center mb-3"
+          >
+            Se annonser på Finn.no →
+          </a>
           <button
             onClick={startPåNytt}
-            className="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition w-full"
+            className="w-full border border-gray-200 text-gray-600 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition"
           >
             Ta quizen på nytt
           </button>
